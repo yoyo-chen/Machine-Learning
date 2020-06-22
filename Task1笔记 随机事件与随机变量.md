@@ -112,7 +112,7 @@ import numpy as np
 ## 未中心化
 x = np.array([1, 2, 3, 5, 8])
 y = np.array([0.11, 0.12, 0.13, 0.15, 0.18])
-## 中心化
+## 中心化，相关系数不变
 #x = np.array([-2.8, -1.8, -0.8, 1.2, 4.2])
 #y = np.array([-0.028, -0.018, -0.008, 0.012, 0.042])
 
@@ -127,11 +127,12 @@ xy = (x-Ex)*(y-Ey)
 Cov = np.sum(xy)/n
 Rho = Cov/math.sqrt(Varx)/math.sqrt(Vary)
 
-#Ex2 = np.average(x)
-#Ey2 = np.average(y)
-#Varx2 = np.var(x)
-#Vary2 = np.var(y)
-#Cov2 = np.cov(x,y)
+Ex2 = np.average(x)
+Ey2 = np.average(y)
+Varx2 = np.var(x)
+Vary2 = np.var(y)
+Cov2 = np.cov(x,y)[0,1]*(n-1)/n # numpy中的cov()是样本协方差，除的是n-1
+Rho2 = np.corrcoef(x,y)[0,1]
 
 print("协方差为：",Cov)
 print("相关系数为：",Rho)
