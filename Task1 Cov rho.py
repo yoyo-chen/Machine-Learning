@@ -28,11 +28,12 @@ xy = (x-Ex)*(y-Ey)
 Cov = np.sum(xy)/n
 Rho = Cov/math.sqrt(Varx)/math.sqrt(Vary)
 
-#Ex2 = np.average(x)
-#Ey2 = np.average(y)
-#Varx2 = np.var(x)
-#Vary2 = np.var(y)
-#Cov2 = np.cov(x,y)
+Ex2 = np.average(x)
+Ey2 = np.average(y)
+Varx2 = np.var(x)
+Vary2 = np.var(y)
+Cov2 = np.cov(x,y)[0,1]*(n-1)/n # numpy中的cov()是样本协方差，除的是n-1
+Rho2 = np.corrcoef(x,y)[0,1]
 
 print("协方差为：",Cov)
 print("相关系数为：",Rho)
