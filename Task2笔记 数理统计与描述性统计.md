@@ -54,7 +54,6 @@ $$
   \overline x =  \frac{1} {n} {\sum_{i=1}^{n}x_i}
   $$
   
-
 * 中位数 $m_{e}$
 
 * 频数
@@ -76,13 +75,11 @@ $$
   s^2 =  \frac{1} {n-1} {\sum_{i=1}^{n}(x_i-\overline x)^2}
   $$
   
-
 * 标准差 $s$
   $$
   s=\sqrt{s^2}
   $$
   
-
 * **极差**
 $$
 R = x_{（n）}-x_{（1）} = max(x)-min(x)
@@ -166,9 +163,9 @@ $$
 #### 练习部分
 ###### python实现数据各维度的描述性分析
 
-https://blog.csdn.net/pipisorry/article/details/48770785
+[numpy教程：统计函数Statistics](https://blog.csdn.net/pipisorry/article/details/48770785)
 
-
+[使用Python进行描述性统计 ](https://www.cnblogs.com/jasonfreak/p/5441512.html)
 
 * 平均数，中位数，众数，百分位数，频数，四分位差，极差
 
