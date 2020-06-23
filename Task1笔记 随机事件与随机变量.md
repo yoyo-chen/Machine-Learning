@@ -1,4 +1,10 @@
-理论部分
+优秀分享
+
+[概率统计基础（一）： 随机变量与随机事件](https://blog.csdn.net/wuzhongqiang/article/details/106910288)
+
+
+
+### 理论部分
 
 #### 1. 随机事件
 
@@ -138,7 +144,8 @@ Ex2 = np.average(x)
 Ey2 = np.average(y)
 Varx2 = np.var(x)
 Vary2 = np.var(y)
-Cov2 = np.cov(x,y)[0,1]*(n-1)/n # numpy中的cov()是样本协方差，除的是n-1
+Cov2 = np.cov(x,y)[0,1]*(n-1)/n # numpy中的cov()是无偏协方差，除的是n-1
+Cov3 = np.cov(x, ddof=0) # 有偏协方差
 Rho2 = np.corrcoef(x,y)[0,1]
 
 print("协方差为：",Cov)
