@@ -1,3 +1,6 @@
+参考资料
+[DataWhale 组队学习/数据挖掘基础方法/概率统计/2. 数理统计与描述性统计](https://github.com/datawhalechina/team-learning/blob/master/02%20%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%9F%BA%E7%A1%80%E6%96%B9%E6%B3%95/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/2.%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1.md)
+
 #### 理论部分
 
 ##### 1. 数理统计的概念
