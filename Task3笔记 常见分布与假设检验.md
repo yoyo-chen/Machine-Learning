@@ -370,7 +370,7 @@ $$
 \Phi(u_\alpha)=1-\alpha; 
 \Phi(u_{1-\alpha})=\alpha;
 u_{1-\alpha}=-u_\alpha;
-(0<u_\alpha<1, 0<u_{1-\alpha}<1)
+(0<u_\alpha<1, -1<u_{1-\alpha}<0)
 $$
 将$C$代入$\beta_\Phi(\theta)$，得到功效函数的完成版如下，
 $$
@@ -441,21 +441,94 @@ $$
 
 ---
 
-缓一下，接下来分析检验问题②（我为神魔要整理这些。。。有点后悔）
+缓一下，接下来分析检验问题②
 
 ---
 
 检验问题 ②　$H_0': \theta \leq \theta_0, H_1': \theta > \theta_0$
 
-$\overline{X}$越小，与原假设越符合。写成检验的形式如下：
+$\overline{X}$越小，与原假设越符合。仿照上述讨论，写成检验的形式如下：
 $$
-\Phi:当\overline{X}\leq \theta_0+\sigma u_\alpha / \sqrt{n} 时接受H_0'，不然就否定H_0'
+\Phi':当\overline{X}\leq \theta_0+\sigma u_\alpha / \sqrt{n} 时接受H_0'，不然就否定H_0'
 $$
 功效函数为：
 $$
 \beta_\Phi'(\theta)=1-\Phi(\sqrt{n}(\theta_0-\theta)/\sigma+u_\alpha)
 $$
-若选定$\theta_1 > \theta_0$，要求$\beta_\Phi'(\theta)\geq 1-\beta, \theta \geq \theta_1$，则得最小所需样本大小$n$与检验问题①S中的计算公式相同。
+若选定$\theta_1 > \theta_0$，要求$\beta_\Phi'(\theta)\geq 1-\beta, \theta \geq \theta_1$，则得最小所需样本大小$n$与检验问题①中的计算公式相同。
+
+---
+
+检验问题②完了，下面让我们分析检验问题①和②的区别，解释设定原假设时的“倾向性”。
+
+---
+
+检验问题① $H_0: \theta \geq \theta_0, H_1: \theta < \theta_0$
+$$
+\Phi':当\overline{X}\geq \theta_0-\sigma u_\alpha / \sqrt{n} 时接受H_0'，不然就否定H_0'
+$$
+检验问题② $H_0': \theta \leq \theta_0, H_1': \theta > \theta_0$
+$$
+\Phi':当\overline{X}\leq \theta_0+\sigma u_\alpha / \sqrt{n} 时接受H_0'，不然就否定H_0'
+$$
+放在一起看一下，发现什么问题了没有？
+
+问题就是，这两个检验问题的原假设相反，但接受域有重合，重合的部分如下，
+$$
+\theta_0-\sigma u_\alpha / \sqrt{n} \leq \overline{X} \leq \theta_0+\sigma u_\alpha / \sqrt{n}
+$$
+也就是说，如果估计值处在上述区间，那么按检验问题①的提法，应接受$\theta \geq \theta_0$；然而按检验问题②的提法，则应接受$\theta \leq \theta_0$。
+
+为什么会出现看似矛盾的结果？
+
+这是因为统计推断并不是“非此即彼”的逻辑，在问题的提法上具有“倾向性”。
+
+简单来说，就是原假设中的问题，我们倾向于希望它是正确的，需要较强的证据才能推翻它。
+
+例如，某商店经常从某工厂进货，该厂过去的产品质量总的说是好的，商店同意把$\theta \geq \theta_0$做为原假设，并选定一个较低的检验水平$\alpha$，这保证了优质的批($\theta \geq \theta_0$)只以很低的概率$\alpha$被拒收，而非优质的批($\theta < \theta_0$)仍能以不很小的概率被接受。要有较强的证据（即$\overline{X}< \theta_0-\sigma u_\alpha / \sqrt{n}$）才否定$\theta \geq \theta_0$
+
+反之，如果该厂过去一段时间产品质量并不好，商店就可以选择$\theta \leq \theta_0$做为原假设，并选定一个较低的检验水平$\alpha$，这表明商店要求有较强的证据（即$\overline{X}> \theta_0+\sigma u_\alpha / \sqrt{n}$）才否定$\theta \leq \theta_0$，相信这批产品质量为优。
+
+---
+
+终于到检验问题③了
+
+---
+
+检验问题③　$H_0'': \theta = \theta_0, H_1'': \theta \neq \theta_0$
+
+其检验如下，
+$$
+\Phi'':当\theta_0-\sigma u_{\alpha/2} / \sqrt{n} \leq \overline{X} \leq \theta_0+\sigma u_{\alpha/2} / \sqrt{n} 时接受H_0'，不然就否定H_0'
+$$
+
+---
+
+可以证明，检验$\Phi$和$\Phi'$分别是检验问题①和②的水平的一致最优检验，而检验问题③的一致最优检验不存在。
+
+关于方差已知时，三个检验问题的讨论在此收尾。后面的内容将只简略介绍，具体内容见陈老师的《概率论与数理统计》
+
+---
+
+方差未知时，问题在于常数$C$依赖于未知的$\sigma$，无法确定。可以用方差的估计值$S$代替。
+
+用$S$代替$\sigma$后，正态分布变为自由度$n-1$的$t$分布，常数$u_\alpha$也改为$t_{n-1}(\alpha)$，得到三个问题的检验如下：
+
+检验问题①，
+$$
+\Phi:当\sqrt{n}(\overline{X}-\theta_0)/S \geq -t_{n-1}(\alpha) 时接受H_0，不然就否定H_0
+$$
+检验问题②，
+$$
+\Phi':当\sqrt{n}(\overline{X}-\theta_0)/S \leq t_{n-1}(\alpha) 时接受H_0'，不然就否定H_0'
+$$
+检验问题③，
+$$
+\Phi'':当|\sqrt{n}(\overline{X}-\theta_0)/S |\leq t_{n-1}(\alpha/2) 时接受H_0''，不然就否定H_0''
+$$
+<这三个检验统称为$t$检验，是应用上最重要的检验之一。
+
+很遗憾，因为方差位置，这些检验的性质也较为复杂，无法通过之前的“望二”得出样本下限值，单侧检验也不是一致最优的（除非$\alpha>1/2$）。
 
 
 
