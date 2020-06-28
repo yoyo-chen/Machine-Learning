@@ -3,6 +3,8 @@
 
 [概率论与数理统计-陈希孺](https://github.com/yoyo-chen/Machine-Learning/blob/master/概率论与数理统计%20-%20陈希孺.pdf) 
 
+[优秀分享](https://blog.csdn.net/wuzhongqiang/article/details/106956844)
+
 
 
 #### 1. 一般随机变量
